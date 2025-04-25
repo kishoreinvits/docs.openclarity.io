@@ -1,5 +1,6 @@
 baseURL = "/"
 title = "OpenClarity"
+canonifyURLs = true
 
 # Language settings
 languageCode = "en-us"
@@ -68,7 +69,7 @@ twitter = "outshiftbycisco"
 
   copyright = "The OpenClarity Authors"
 
-  relativeURLs = true
+  # relativeURLs = true # Comment out this line as it conflicts with canonifyURLs
 
   # Add project name to the header
   project_name = "OpenClarity"
