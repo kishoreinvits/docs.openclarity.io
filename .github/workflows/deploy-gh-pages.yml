@@ -42,7 +42,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest' # Or specify your Hugo version e.g., '0.118.2'
+          hugo-version: '0.118.2'
           extended: true
 
       - name: Install dependencies
@@ -53,8 +53,7 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: npm run build:gh-pages
-
+        run: hugo --cleanDestinationDir --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" --canonifyURLs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
